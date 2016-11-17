@@ -1,4 +1,4 @@
-package como.isil.mynotes.rest.storage.entity;
+package como.isil.mynotes.rest.entity;
 
 import java.io.Serializable;
 import java.util.Calendar;
