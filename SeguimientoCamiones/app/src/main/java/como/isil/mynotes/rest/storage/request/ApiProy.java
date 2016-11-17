@@ -1,12 +1,8 @@
 package como.isil.mynotes.rest.storage.request;
 
+import como.isil.mynotes.rest.storage.entity.CheckPointsResponse;
 import como.isil.mynotes.rest.storage.entity.LogInProyRaw;
 import como.isil.mynotes.rest.storage.entity.LogInProyResponse;
-import como.isil.mynotes.rest.storage.entity.LogInRaw;
-import como.isil.mynotes.rest.storage.entity.LogInResponse;
-import como.isil.mynotes.rest.storage.entity.NoteRaw;
-import como.isil.mynotes.rest.storage.entity.NoteResponse;
-import como.isil.mynotes.rest.storage.entity.NotesResponse;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -58,6 +54,16 @@ public class ApiProy {
         //v1/users/login
         @POST("/v1/users/login")
         Call<LogInProyResponse> login(@Body LogInProyRaw raw);
+
+        @Headers({
+                "Content-Type: application/json",
+                "application-id: D8B9D57F-444B-190A-FF6D-8EA3256EEA00",
+                "secret-key: 3D6C9C91-2D25-00DD-FF11-CDDDC4362800",
+                "application-type: REST"
+        })
+        //v1/data/checkpoints
+        @GET("/v1/data/checkpoints")
+        Call<CheckPointsResponse> checkpoints();
 
 
     }
