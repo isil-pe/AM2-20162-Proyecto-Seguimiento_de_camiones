@@ -11,8 +11,8 @@ public class CheckPointsResponse {
 
     private String message;
     private int offset;
-    private List<CheckPointEntity> lobjCheckPoint;
-    private String nextPage;
+    private List<CheckPointEntity> data;
+    private Object nextPage;
     private int totalObjects;
 
     public String getMessage() {
@@ -31,19 +31,19 @@ public class CheckPointsResponse {
         this.offset = offset;
     }
 
-    public List<CheckPointEntity> getLobjCheckPoint() {
-        return lobjCheckPoint;
+    public List<CheckPointEntity> getData() {
+        return data;
     }
 
-    public void setLobjCheckPoint(List<CheckPointEntity> lobjCheckPoint) {
-        this.lobjCheckPoint = lobjCheckPoint;
+    public void setData(List<CheckPointEntity> data) {
+        this.data = data;
     }
 
-    public String getNextPage() {
+    public Object getNextPage() {
         return nextPage;
     }
 
-    public void setNextPage(String nextPage) {
+    public void setNextPage(Object nextPage) {
         this.nextPage = nextPage;
     }
 
