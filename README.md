@@ -1,5 +1,5 @@
 # Seguimiento_de_camiones
 
 Integrantes:
--Aldo Chumpitaz
+-Aldo Chumpitaz <br>
 -Carlos Barrenechea
