@@ -53,6 +53,8 @@
         android:adjustViewBounds="true"
         android:src="@drawable/crf"
         android:id="@+id/iviLogo"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/include"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp" />
 
 </RelativeLayout>

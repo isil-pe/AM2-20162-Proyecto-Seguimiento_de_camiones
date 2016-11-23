@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">MyNotes</string>
+    <string name="app_name">Seguimiento de camiones</string>
 
-    <string name="hello_world">MyNotes</string>
-    <string name="action_settings">MyNotes</string>
-    <string name="title_activity_splash">MyNotes</string>
-    <string name="my_note">My Notes</string>
-    <string name="title_activity_login">MyNotes</string>
+    <string name="hello_world">Seguimiento de camiones</string>
+    <string name="action_settings">Seguimiento de camiones</string>
+    <string name="title_activity_splash">Seguimiento de camiones</string>
+    <string name="my_note">Seguimiento de camiones</string>
+    <string name="title_activity_login">Seguimiento de camiones</string>
     <string name="logout">Cerrar sesi\u00F3n</string>
     <string name="esta_es_una_nota">Esta es un nota</string>
 
