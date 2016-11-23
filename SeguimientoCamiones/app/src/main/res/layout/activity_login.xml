@@ -10,7 +10,7 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:adjustViewBounds="true"
-        android:src="@drawable/ic_notepad128"
+        android:src="@drawable/crf"
         android:layout_alignParentTop="true"
         android:id="@+id/iviLogo" />
 
