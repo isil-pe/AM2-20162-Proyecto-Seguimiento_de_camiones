@@ -16,7 +16,7 @@
         <activity
             android:name="como.isil.mynotes.rest.MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="como.isil.mynotes.rest.SplashActivity"
             android:label="@string/title_activity_splash"
@@ -30,12 +30,13 @@
         <activity
             android:name="como.isil.mynotes.rest.LoginActivity"
             android:label="@string/title_activity_login"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="como.isil.mynotes.rest.NoteActivity"
             android:label="@string/title_activity_note"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name="como.isil.mynotes.rest.WelcomeActivity"></activity>
+            android:screenOrientation="portrait" />
+        <activity android:name="como.isil.mynotes.rest.WelcomeActivity" />
+        <activity android:name="como.isil.mynotes.rest.OrderActivity"></activity>
     </application>
 
 </manifest>
