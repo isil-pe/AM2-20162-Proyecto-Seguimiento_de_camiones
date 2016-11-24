@@ -7,40 +7,34 @@ import java.io.Serializable;
  */
 
 public class OrderEntity implements Serializable {
-
-
-
-    private String id_order;
+    private String objectId;
     private String detail;
     private String id_vehiculo;
     private String weight;
-    private String RUC;
-    private String origenlat;
-    private String origenlon;
-    private String destinolat;
-    private String destinolon;
+    private String client_RUC;
+    private String origen_lat;
+    private String origen_lon;
+    private String destino_lat;
+    private String destino_lon;
 
-    public OrderEntity() {
-    }
 
-    public OrderEntity(String id_order, String detail, String id_vehiculo, String weight, String RUC, String origenlat, String origenlon, String destinolat, String destinolon) {
-        this.id_order = id_order;
+    public OrderEntity(String detail, String id_vehiculo, String weight, String client_RUC, String origen_lat, String origen_lon, String destino_lat, String destino_lon) {
         this.detail = detail;
         this.id_vehiculo = id_vehiculo;
         this.weight = weight;
-        this.RUC = RUC;
-        this.origenlat = origenlat;
-        this.origenlon = origenlon;
-        this.destinolat = destinolat;
-        this.destinolon = destinolon;
+        this.client_RUC = client_RUC;
+        this.origen_lat = origen_lat;
+        this.origen_lon = origen_lon;
+        this.destino_lat = destino_lat;
+        this.destino_lon = destino_lon;
     }
 
-    public String getId_order() {
-        return id_order;
+    public String getObjectId() {
+        return objectId;
     }
 
-    public void setId_order(String id_order) {
-        this.id_order = id_order;
+    public void setObjectId(String objectId) {
+        this.objectId = objectId;
     }
 
     public String getDetail() {
@@ -67,43 +61,48 @@ public class OrderEntity implements Serializable {
         this.weight = weight;
     }
 
-    public String getRUC() {
-        return RUC;
+    public String getClient_RUC() {
+        return client_RUC;
     }
 
-    public void setRUC(String RUC) {
-        this.RUC = RUC;
+    public void setClient_RUC(String client_RUC) {
+        this.client_RUC = client_RUC;
     }
 
-    public String getOrigenlat() {
-        return origenlat;
+    public String getOrigen_lat() {
+        return origen_lat;
     }
 
-    public void setOrigenlat(String origenlat) {
-        this.origenlat = origenlat;
+    public void setOrigen_lat(String origen_lat) {
+        this.origen_lat = origen_lat;
     }
 
-    public String getOrigenlon() {
-        return origenlon;
+    public String getOrigen_lon() {
+        return origen_lon;
     }
 
-    public void setOrigenlon(String origenlon) {
-        this.origenlon = origenlon;
+    public void setOrigen_lon(String origen_lon) {
+        this.origen_lon = origen_lon;
     }
 
-    public String getDestinolat() {
-        return destinolat;
+    public String getDestino_lat() {
+        return destino_lat;
     }
 
-    public void setDestinolat(String destinolat) {
-        this.destinolat = destinolat;
+    public void setDestino_lat(String destino_lat) {
+        this.destino_lat = destino_lat;
     }
 
-    public String getDestinolon() {
-        return destinolon;
+    public String getDestino_lon() {
+        return destino_lon;
     }
 
-    public void setDestinolon(String destinolon) {
-        this.destinolon = destinolon;
+    public void setDestino_lon(String destino_lon) {
+        this.destino_lon = destino_lon;
     }
+
+    public OrderEntity() {
+    }
+
+
 }

@@ -10,7 +10,7 @@ import como.isil.mynotes.rest.entity.OrderEntity;
 public class OrdersResponse {
     private String message;
     private int offset;
-    private List<OrderEntity> lobjOrder;
+    private List<OrderEntity> data;
     private String nextPage;
 
     public String getMessage() {
@@ -29,12 +29,12 @@ public class OrdersResponse {
         this.offset = offset;
     }
 
-    public List<OrderEntity> getLobjOrder() {
-        return lobjOrder;
+    public List<OrderEntity> getData() {
+        return data;
     }
 
-    public void setLobjOrder(List<OrderEntity> lobjOrder) {
-        this.lobjOrder = lobjOrder;
+    public void setData(List<OrderEntity> data) {
+        this.data = data;
     }
 
     public String getNextPage() {
