@@ -5,7 +5,13 @@
     android:padding="5dp"
     android:gravity="center_vertical">
 
-
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Id orden: "
+        android:id="@+id/tviIDordert"
+        android:textStyle="bold" />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -13,7 +19,13 @@
         android:text="Id orden: "
         android:id="@+id/tviIDorder"
         android:textStyle="bold" />
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Descripcion: "
+        android:id="@+id/tviDescripciont"
+        android:textStyle="bold" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,15 +33,13 @@
         android:text="Descripcion: "
         android:id="@+id/tviDescripcion"
         android:textStyle="bold" />
-
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text=""
-        android:id="@+id/espacio"
+        android:text="RUC Cliente: "
+        android:id="@+id/tviRUCt"
         android:textStyle="bold" />
-
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -37,7 +47,13 @@
         android:text="RUC Cliente: "
         android:id="@+id/tviRUC"
         android:textStyle="bold" />
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Origen: "
+        android:id="@+id/tviOrigent"
+        android:layout_gravity="center_vertical" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,6 +61,13 @@
         android:text="Origen: "
         android:id="@+id/tviOrigen"
         android:layout_gravity="center_vertical" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Destino: "
+        android:id="@+id/tviDestinot" />
+
     <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

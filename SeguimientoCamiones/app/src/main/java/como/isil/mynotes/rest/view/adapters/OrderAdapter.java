@@ -60,11 +60,11 @@ public class OrderAdapter extends BaseAdapter {
         OrderEntity entry = lsOrderEntities.get(position);
         if(entry != null) {
             ViewHolder holder = (ViewHolder)v.getTag();
-            holder.tviIdOrder.setText("Id. Orden: " + entry.getObjectId());
-            holder.tviRUC.setText("Ruc cliente: " + entry.getClient_RUC());
-            holder.tviDescripcion.setText("Descripción :" +entry.getDetail());
-            holder.tviOrigen.setText("Origen: "+ entry.getOrigen_lat() + "," + entry.getOrigen_lon());
-            holder.tviDestino.setText("Destino: "+ entry.getDestino_lat() + "," + entry.getDestino_lon());
+            holder.tviIdOrder.setText(entry.getObjectId());
+            holder.tviRUC.setText(entry.getClient_RUC());
+            holder.tviDescripcion.setText(entry.getDetail());
+            holder.tviOrigen.setText(entry.getOrigen_lat() + "," + entry.getOrigen_lon());
+            holder.tviDestino.setText(entry.getDestino_lat() + "," + entry.getDestino_lon());
         }
 
         return v;
