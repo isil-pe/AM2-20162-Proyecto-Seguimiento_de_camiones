@@ -1,5 +1,6 @@
 package como.isil.mynotes.rest.storage.request;
 
+import como.isil.mynotes.rest.storage.entity.CheckPointRaw;
 import como.isil.mynotes.rest.storage.entity.CheckPointsResponse;
 import como.isil.mynotes.rest.storage.entity.LogInProyRaw;
 import como.isil.mynotes.rest.storage.entity.LogInProyResponse;
@@ -87,7 +88,16 @@ public class ApiProy {
                 "application-type: REST"
         })
         @POST("/v1/data/orders")
-        Call<OrderResponse> addNote(@Body OrderRaw raw);
+        Call<OrderResponse> addOrder(@Body OrderRaw raw);
+
+        @Headers({
+                "Content-Type: application/json",
+                "application-id: D8B9D57F-444B-190A-FF6D-8EA3256EEA00",
+                "secret-key: 3D6C9C91-2D25-00DD-FF11-CDDDC4362800",
+                "application-type: REST"
+        })
+        @POST("/v1/data/checkpoints")
+        Call<CheckPointsResponse> addCheckPoint(@Body CheckPointRaw raw);
     }
 
     /*private static OkHttpClient.Builder client(){
