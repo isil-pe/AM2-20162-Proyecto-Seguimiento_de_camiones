@@ -14,7 +14,7 @@ public class OrderEntity implements Serializable {
     private String detail;
     private String id_vehiculo;
     private String weight;
-    private int RUC;
+    private String RUC;
     private String origenlat;
     private String origenlon;
     private String destinolat;
@@ -23,7 +23,7 @@ public class OrderEntity implements Serializable {
     public OrderEntity() {
     }
 
-    public OrderEntity(String id_order, String detail, String id_vehiculo, String weight, int RUC, String origenlat, String origenlon, String destinolat, String destinolon) {
+    public OrderEntity(String id_order, String detail, String id_vehiculo, String weight, String RUC, String origenlat, String origenlon, String destinolat, String destinolon) {
         this.id_order = id_order;
         this.detail = detail;
         this.id_vehiculo = id_vehiculo;
@@ -67,11 +67,11 @@ public class OrderEntity implements Serializable {
         this.weight = weight;
     }
 
-    public int getRUC() {
+    public String getRUC() {
         return RUC;
     }
 
-    public void setRUC(int RUC) {
+    public void setRUC(String RUC) {
         this.RUC = RUC;
     }
 
