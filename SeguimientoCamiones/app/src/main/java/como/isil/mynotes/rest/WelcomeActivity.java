@@ -8,8 +8,13 @@ import com.isil.mynotes.rest.R;
 
 import como.isil.mynotes.rest.storage.PreferencesHelper;
 import como.isil.mynotes.rest.utils.CapitalizeString;
+import como.isil.mynotes.rest.view.listeners.OnOrderListener;
 
-public class WelcomeActivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity implements OnOrderListener{
+
+    public static final  int DETAIL_NOTE=101;
+
+
 
     TextView txvWelcome;
     @Override
@@ -23,5 +28,20 @@ public class WelcomeActivity extends AppCompatActivity {
         {
             txvWelcome.setText("Bienvenido "+ new CapitalizeString(username).first());
         }
+    }
+
+    @Override
+    public void showParentLoading() {
+
+    }
+
+    @Override
+    public void hideParentLoading() {
+
+    }
+
+    @Override
+    public void showMessage(String message) {
+
     }
 }
