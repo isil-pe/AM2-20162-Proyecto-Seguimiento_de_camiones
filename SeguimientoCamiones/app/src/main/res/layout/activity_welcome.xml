@@ -10,12 +10,33 @@
     tools:context="como.isil.mynotes.rest.WelcomeActivity">
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bienvenido: "
+        android:text="@string/logout"
+        android:id="@+id/txvLogout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:padding="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido"
         android:id="@+id/txvWelcome"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="43dp" />
+        android:padding="12dp"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lstOrders" />
+    </LinearLayout>
+
 </RelativeLayout>
