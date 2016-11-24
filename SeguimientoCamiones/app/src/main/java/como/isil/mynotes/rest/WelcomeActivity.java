@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -94,13 +95,13 @@ public class WelcomeActivity extends AppCompatActivity implements OrdersView{
 
         //events
 
-       /* lstOrders.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+       lstOrders.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                NoteEntity noteEntity = (NoteEntity) adapterView.getAdapter().getItem(i);
-                gotoNote(ACTION_DETAIL, noteEntity);
+                OrderEntity orderEntity = (OrderEntity) adapterView.getAdapter().getItem(i);
+                gotoOrderDetails(orderEntity);
             }
-        });*/
+        });
 
         tviLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,6 +110,14 @@ public class WelcomeActivity extends AppCompatActivity implements OrdersView{
             }
         });
     }
+    private void gotoOrderDetails(OrderEntity orderEntity) {
+        Intent intent= new Intent(this,NoteActivity.class);
+        intent.putExtra("FRAGMENT",NoteActivity.DETAIL_NOTE);
+        intent.putExtra("ORDER", orderEntity);
+        startActivity(intent);
+    }
+
+
     private void loadCloud() {
         ordersPresenter.loadOrders();
     }
