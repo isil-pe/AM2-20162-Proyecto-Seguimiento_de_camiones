@@ -111,8 +111,8 @@ public class WelcomeActivity extends AppCompatActivity implements OrdersView{
         });
     }
     private void gotoOrderDetails(OrderEntity orderEntity) {
-        Intent intent= new Intent(this,NoteActivity.class);
-        intent.putExtra("FRAGMENT",NoteActivity.DETAIL_NOTE);
+        Intent intent= new Intent(this,OrderActivity.class);
+        intent.putExtra("FRAGMENT",OrderActivity.DETAIL_ORDER);
         intent.putExtra("ORDER", orderEntity);
         startActivity(intent);
     }
