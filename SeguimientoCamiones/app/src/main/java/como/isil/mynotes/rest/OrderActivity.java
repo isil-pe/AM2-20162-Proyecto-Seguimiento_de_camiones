@@ -113,9 +113,9 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                 new LatLng(lat, lng),12));
-
+/*
         TextView txvCoord = (TextView) findViewById(R.id.tviCoord);
-        txvCoord.setText("Latitud: "+lat+", Longitud"+lng);
+        txvCoord.setText("Latitud: "+lat+", Longitud"+lng);*/
 
 
         Toast.makeText(getApplicationContext(),
@@ -130,9 +130,29 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
 
 
+
+        Double origlat = Double.parseDouble(origen_latitud);
+        Double origlon = Double.parseDouble(origen_longitud);
+        Double destlat = Double.parseDouble(destino_latitud);
+        Double destlon = Double.parseDouble(destino_longitud);
+
+
+        LatLng origen = new LatLng(origlat,origlon);
+        LatLng destino = new LatLng(destlat,origlat);
+
         googleMap.addMarker(new MarkerOptions()
-                .position(new LatLng(Double.parseDouble(origen_latitud), Double.parseDouble(origen_longitud)))
+                .position(origen)
                 .title("Origen"));
+
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(destino)
+                .title("Destino"));
+
+
+        TextView txvCoord = (TextView) findViewById(R.id.tviCoord);
+        txvCoord.setText("Latitud: "+origlat+", Longitud"+origlon);
+
     }
 
 

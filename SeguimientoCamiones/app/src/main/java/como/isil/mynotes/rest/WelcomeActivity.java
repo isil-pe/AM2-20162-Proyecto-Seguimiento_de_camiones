@@ -100,16 +100,16 @@ public class WelcomeActivity extends AppCompatActivity implements OrdersView{
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 OrderEntity orderEntity = (OrderEntity) adapterView.getAdapter().getItem(i);
                 Log.d("ORIGEN Latitud: ", orderEntity.getOrigen_lat());
-                Log.d("ORIGEN Longitud: ", orderEntity.getOrigen_lat());
+                Log.d("ORIGEN Longitud: ", orderEntity.getOrigen_lon());
                 Log.d("DESTINO Latitud: ", orderEntity.getDestino_lat());
                 Log.d("DESTINO Longitud: ", orderEntity.getDestino_lon());
                 Log.d("ID Orden: ", orderEntity.getObjectId());
 
                 Intent intent= new Intent(WelcomeActivity.this,OrderActivity.class);
                 intent.putExtra("origen_latitud", orderEntity.getOrigen_lat());
-                intent.putExtra("origen_longitud", orderEntity.getOrigen_lat());
-                intent.putExtra("destino_latitud", orderEntity.getOrigen_lat());
-                intent.putExtra("destino_longitud", orderEntity.getOrigen_lat());
+                intent.putExtra("origen_longitud", orderEntity.getOrigen_lon());
+                intent.putExtra("destino_latitud", orderEntity.getDestino_lat());
+                intent.putExtra("destino_longitud", orderEntity.getDestino_lon());
                 intent.putExtra("id_orden", orderEntity.getObjectId());
                 startActivity(intent);
                 //gotoOrderDetails(orderEntity);
