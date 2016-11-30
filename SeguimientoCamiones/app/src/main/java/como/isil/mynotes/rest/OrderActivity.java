@@ -99,6 +99,12 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         }*/
     }
 
+    public void crearMarcador(GoogleMap googleMap){
+
+
+    }
+
+
 
     public void onMapReady(GoogleMap googleMap) {
 
@@ -220,6 +226,14 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
                     TextView txvCoord = (TextView) findViewById(R.id.tviCoord);
                     txvCoord.setText("Ub. actual: Lat: "+lat+", Lon: "+lng);
+
+                    locMan = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+                    if (ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+                        Toast.makeText(OrderActivity.this, "Por favor ceder permisos en configuración.", Toast.LENGTH_LONG).show();
+                        return;
+                    }
+
 
                     Toast.makeText(getApplicationContext(), "Ubicación enviada", Toast.LENGTH_SHORT).show();
 
