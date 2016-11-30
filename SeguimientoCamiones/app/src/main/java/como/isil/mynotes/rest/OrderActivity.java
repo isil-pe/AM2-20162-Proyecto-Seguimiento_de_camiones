@@ -27,11 +27,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.isil.mynotes.rest.R;
 
 import como.isil.mynotes.rest.entity.OrderEntity;
+import como.isil.mynotes.rest.utils.LocationService;
 import como.isil.mynotes.rest.view.fragments.OrderDetailFragment;
 import como.isil.mynotes.rest.view.fragments.TrackMap;
 import como.isil.mynotes.rest.view.listeners.OnOrderListener;
 
-public class OrderActivity extends AppCompatActivity {
+public class OrderActivity extends AppCompatActivity implements View.OnClickListener{
 
     public static final int DETAIL_ORDER = 101;
     private static final String TAG = "OrderActivity";
@@ -39,6 +40,8 @@ public class OrderActivity extends AppCompatActivity {
     private int fragmentSelected = DETAIL_ORDER;
     private OrderEntity orderEntity;
 
+    private View btnStart;
+    private View btnStop;
     private View rlayLoading;
 
     private GoogleMap googleMap;
@@ -59,6 +62,11 @@ public class OrderActivity extends AppCompatActivity {
         destino_longitud = getIntent().getStringExtra("destino_longitud");
         id_orden = getIntent().getStringExtra("id_orden");
         initializeUI();
+
+        btnStart= findViewById(R.id.btnStart);
+        btnStop= findViewById(R.id.btnStop);
+
+        btnStart.setOnClickListener(this);
     }
 
     private void initializeUI() {
@@ -87,5 +95,25 @@ public class OrderActivity extends AppCompatActivity {
                         .show();
             }
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnStart:
+                startLocationService();
+                break;
+            case R.id.btnStop:
+                stopLocationService();
+                break;
+        }
+    }
+
+    private void startLocationService() {
+        startService(new Intent(this, LocationService.class));
+    }
+
+    private void stopLocationService() {
+        stopService(new Intent(this, LocationService.class));
     }
 }

@@ -19,7 +19,7 @@ import como.isil.mynotes.rest.view.fragments.AddNoteFragment;
 import como.isil.mynotes.rest.view.fragments.DetailsFragment;
 import como.isil.mynotes.rest.view.listeners.OnNoteListener;
 
-public class NoteActivity extends ActionBarActivity  implements OnNoteListener, MyDialogListener{
+public class NoteActivity extends ActionBarActivity  implements OnNoteListener, MyDialogListener, View.OnClickListener{
 
     public static final  int ADD_NOTE=100;
     public static final  int DETAIL_NOTE=101;
@@ -33,6 +33,9 @@ public class NoteActivity extends ActionBarActivity  implements OnNoteListener, 
 
     private CRUDOperations crudOperations;
     private NoteEntity tmpNoteEntity;
+
+    private View btnStart;
+    private View btnStop;
 
     private View rlayLoading;
 
@@ -148,5 +151,10 @@ public class NoteActivity extends ActionBarActivity  implements OnNoteListener, 
     @Override
     public void onNegativeListener(Object object, int type) {
         Log.v(TAG, "dialog negative");
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
