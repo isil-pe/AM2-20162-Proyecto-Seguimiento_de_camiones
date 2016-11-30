@@ -17,7 +17,7 @@ import java.util.TimerTask;
 
 public class LocationService extends IntentService {
 
-    private  static Timer timer= new Timer();
+    private  static  Timer timer= new Timer();
     private Context context;
 
     public LocationService() {
@@ -53,7 +53,7 @@ public class LocationService extends IntentService {
         @Override
         public void handleMessage(Message msg)
         {
-            Toast.makeText(context, "Timer", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Ubicación enviada", Toast.LENGTH_SHORT).show();
         }
     };
     @Override

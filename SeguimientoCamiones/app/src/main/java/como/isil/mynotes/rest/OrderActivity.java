@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,10 +45,16 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
     String origen_latitud, origen_longitud, destino_latitud, destino_longitud, id_orden;
 
+    Handler h = new Handler();
+    int delay = 15000; //15 seconds
+    Runnable runnable;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
+
+
 
         origen_latitud = getIntent().getStringExtra("origen_latitud");
         origen_longitud = getIntent().getStringExtra("origen_longitud");
@@ -62,6 +69,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         btnStop= findViewById(R.id.btnStop);
 
         btnStart.setOnClickListener(this);
+        btnStop.setOnClickListener(this);
 
 
     }
@@ -150,8 +158,6 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
                 .title("Destino"));
 
 
-        TextView txvCoord = (TextView) findViewById(R.id.tviCoord);
-        txvCoord.setText("Latitud: "+origlat+", Longitud"+origlon);
 
     }
 
@@ -195,10 +201,45 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void startLocationService() {
-        startService(new Intent(this, LocationService.class));
+
+        Toast.makeText(getApplicationContext(), "Rastreo iniciado", Toast.LENGTH_SHORT).show();
+            h.postDelayed(new Runnable() {
+                public void run() {
+
+                    locMan = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+                    if (ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+                        Toast.makeText(OrderActivity.this, "Por favor ceder permisos en configuración.", Toast.LENGTH_LONG).show();
+                        return;
+                    }
+
+
+                    Location lastLoc = locMan.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                    final double lat = lastLoc.getLatitude();
+                    final double lng = lastLoc.getLongitude();
+
+                    TextView txvCoord = (TextView) findViewById(R.id.tviCoord);
+                    txvCoord.setText("Ub. actual: Lat: "+lat+", Lon: "+lng);
+
+                    Toast.makeText(getApplicationContext(), "Ubicación enviada", Toast.LENGTH_SHORT).show();
+
+
+
+
+                    runnable=this;
+
+                    h.postDelayed(runnable, delay);
+                }
+            }, delay);
+
+
+      /*  startService(new Intent(this, LocationService.class));*/
     }
 
     private void stopLocationService() {
-        stopService(new Intent(this, LocationService.class));
+
+            h.removeCallbacks(runnable);
+        Toast.makeText(getApplicationContext(), "Envio de coordenadas detenido", Toast.LENGTH_SHORT).show();
+
     }
 }
