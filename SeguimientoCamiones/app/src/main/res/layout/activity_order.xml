@@ -14,10 +14,10 @@
         android:id="@+id/btnStart"/>
 
     <fragment
-        android:id="@+id/map"
-        android:name="como.isil.mynotes.rest.CustomMapFragment"
+        android:id="@+id/mapita"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="380dp"
+        android:layout_height="400dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -27,8 +27,19 @@
         android:layout_height="wrap_content"
         android:text="Terminar seguimiento"
         android:id="@+id/btnStop"
-        android:layout_above="@+id/map"
+        android:layout_above="@+id/mapita"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="19dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tviCoord"
+        android:layout_above="@+id/mapita"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp" />
 </RelativeLayout>
