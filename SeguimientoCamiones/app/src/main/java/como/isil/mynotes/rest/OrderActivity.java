@@ -138,7 +138,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
 
         LatLng origen = new LatLng(origlat,origlon);
-        LatLng destino = new LatLng(destlat,origlat);
+        LatLng destino = new LatLng(destlat,destlon);
 
         googleMap.addMarker(new MarkerOptions()
                 .position(origen)

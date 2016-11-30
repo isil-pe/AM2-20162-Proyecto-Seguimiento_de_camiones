@@ -53,8 +53,6 @@ public class OrderAdapter extends BaseAdapter {
             holder.tviIdOrder = (TextView)v.findViewById(R.id.tviIDorder);
             holder.tviRUC = (TextView)v.findViewById(R.id.tviRUC);
             holder.tviDescripcion = (TextView)v.findViewById(R.id.tviDescripcion);
-            holder.tviOrigen = (TextView)v.findViewById(R.id.tviOrigen);
-            holder.tviDestino = (TextView)v.findViewById(R.id.tviDestino);
             v.setTag(holder);
         }
         OrderEntity entry = lsOrderEntities.get(position);
@@ -63,8 +61,6 @@ public class OrderAdapter extends BaseAdapter {
             holder.tviIdOrder.setText(entry.getObjectId());
             holder.tviRUC.setText(entry.getClient_RUC());
             holder.tviDescripcion.setText(entry.getDetail());
-            holder.tviOrigen.setText(entry.getOrigen_lat() + "," + entry.getOrigen_lon());
-            holder.tviDestino.setText(entry.getDestino_lat() + "," + entry.getDestino_lon());
         }
 
         return v;
@@ -72,6 +68,6 @@ public class OrderAdapter extends BaseAdapter {
 
     static class ViewHolder
     {
-        TextView tviIdOrder, tviOrigen, tviDestino, tviRUC, tviDescripcion;
+        TextView tviIdOrder, tviRUC, tviDescripcion;
     }
 }
