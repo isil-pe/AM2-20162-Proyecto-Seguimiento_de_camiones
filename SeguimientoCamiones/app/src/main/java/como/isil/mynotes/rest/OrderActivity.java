@@ -106,23 +106,28 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         final double lat = lastLoc.getLatitude();
         final double lng = lastLoc.getLongitude();
 
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(new LatLng(lat, lng))
+                .title("Actual"));
+
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                new LatLng(lat, lng),12));
+
         TextView txvCoord = (TextView) findViewById(R.id.tviCoord);
         txvCoord.setText("Latitud: "+lat+", Longitud"+lng);
 
 
-        final LatLng lasLatLng = new LatLng(lat, lng);
         Toast.makeText(getApplicationContext(),
-                "Latitud: "+lat+", Longitud"+lng, Toast.LENGTH_SHORT)
+                "Latitud: "+origen_latitud+", Longitud"+origen_longitud, Toast.LENGTH_SHORT)
                 .show();
         googleMap.setMyLocationEnabled(true);
         if (googleMap == null) {
             Toast.makeText(getApplicationContext(),
-                    "Sorry! unable to create maps", Toast.LENGTH_SHORT)
+                    "Error al crear los mapas", Toast.LENGTH_SHORT)
                     .show();
         }
 
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                new LatLng(Double.parseDouble(origen_latitud), Double.parseDouble(origen_longitud)),12));
 
 
         googleMap.addMarker(new MarkerOptions()
@@ -132,8 +137,8 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
 
 
-    private void mapElements(){
-        locMan = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+    private void mapElements() {
+        locMan = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
             Toast.makeText(OrderActivity.this, "Por favor ceder permisos en configuración.", Toast.LENGTH_LONG).show();
@@ -145,22 +150,17 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         final double lat = lastLoc.getLatitude();
         final double lng = lastLoc.getLongitude();
 
+
+
         TextView txvCoord = (TextView) findViewById(R.id.tviCoord);
-        txvCoord.setText("Latitud: "+lat+", Longitud"+lng);
+        txvCoord.setText("Latitud: " + lat + ", Longitud" + lng);
 
 
         final LatLng lasLatLng = new LatLng(lat, lng);
         Toast.makeText(getApplicationContext(),
-                "Latitud: "+lat+", Longitud"+lng, Toast.LENGTH_SHORT)
+                "Latitud: " + lat + ", Longitud" + lng, Toast.LENGTH_SHORT)
                 .show();
-/*
-        if (googleMap == null) {
-            googleMap.addMarker(new MarkerOptions()
-                    .position(new LatLng(Double.parseDouble(origen_latitud), Double.parseDouble(origen_longitud)))
-                    .title("Origen"));
-        }*/
     }
-
 
     @Override
     public void onClick(View v) {
