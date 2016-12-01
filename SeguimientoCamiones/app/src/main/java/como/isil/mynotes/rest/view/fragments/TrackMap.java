@@ -7,9 +7,6 @@ import android.view.ViewGroup;
 
 import com.google.android.gms.maps.SupportMapFragment;
 
-/**
- * Created by Marzio on 25/11/2016.
- */
 
 public class TrackMap extends SupportMapFragment {
     public TrackMap() {

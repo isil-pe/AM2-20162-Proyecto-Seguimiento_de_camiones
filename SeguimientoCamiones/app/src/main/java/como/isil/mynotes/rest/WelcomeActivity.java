@@ -25,8 +25,6 @@ import como.isil.mynotes.rest.view.adapters.OrderAdapter;
 public class WelcomeActivity extends AppCompatActivity implements OrdersView{
 
     private static final String TAG ="MainActivity" ;
-    private static final int ACTION_ADD=1;
-    private static final int ACTION_DETAIL=2;
 
     private TextView tviLogout,tviUser;
     private ListView lstOrders;

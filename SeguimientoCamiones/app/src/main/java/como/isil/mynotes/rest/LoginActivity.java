@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.isil.mynotes.rest.R;
 
-import como.isil.mynotes.rest.presenter.LogInPresenter;
 import como.isil.mynotes.rest.presenter.LogInProyPresenter;
 import como.isil.mynotes.rest.presenter.LogInProyView;
 import como.isil.mynotes.rest.presenter.LogInView;

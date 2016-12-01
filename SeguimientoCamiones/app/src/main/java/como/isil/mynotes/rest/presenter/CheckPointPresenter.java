@@ -2,14 +2,9 @@ package como.isil.mynotes.rest.presenter;
 
 import android.util.Log;
 
-import java.util.Date;
-import java.util.List;
-
 import como.isil.mynotes.rest.entity.CheckPointEntity;
 import como.isil.mynotes.rest.storage.entity.CheckPointRaw;
 import como.isil.mynotes.rest.storage.entity.CheckPointResponse;
-import como.isil.mynotes.rest.storage.entity.CheckPointsResponse;
-import como.isil.mynotes.rest.storage.entity.NoteResponse;
 import como.isil.mynotes.rest.storage.request.ApiProy;
 import retrofit2.Call;
 import retrofit2.Callback;

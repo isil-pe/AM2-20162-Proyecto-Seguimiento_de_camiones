@@ -44,7 +44,6 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
     private GoogleMap googleMap;
     private LocationManager locMan;
     double lat, lng;
-    private CustomMapFragment mCustomMapFragment;
     private CheckPointPresenter checkPointPresenter;
 
     String origen_latitud, origen_longitud, destino_latitud, destino_longitud, id_orden;
