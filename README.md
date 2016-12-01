@@ -6,6 +6,10 @@
 <li>Carlos Barrenechea</li>
 </ul>
 
+<h3>Descripción del proyecto</h3>
+</br>
+<p>Seguimiento de Camiones es una app que permite registrar en tiempo real la ubicación de un camión en una base de datos mediante el uso de servicios en la nube.</p>
+
 <h3>Funcionalidades</h3>
 <ul>
 <li>Autenticación</li>
