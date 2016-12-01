@@ -22,27 +22,26 @@
 
 
 <h3>Wireframe</h3>
-<a href="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/wireframe.png">https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/wireframe.png</a>
-<img src="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/wireframe.png" width="100%">
-
+<a href="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/wireframe.png">
+<img src="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/wireframe.png"   width="100%"></a>
 
 <h3>Capturas de la base de datos en Backendless </h3>
 
 <h4>Users</h4>
-<a href="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/users.png">https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/users.png</a>
-<img src="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/users.png" width="100%">
+<a href="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/users.png">
+<img src="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/users.png" width="100%"></a>
 
 </br>
 
 <h4>Orders</h4>
-<a href="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/orders.png">https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/users.png</a>
-<img src="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/orders.png" width="100%">
+<a href="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/orders.png">
+<img src="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/orders.png" width="100%"></a>
 
 </br>
 
 <h4>Checkpoints</h4>
-<a href="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/checkpoints.png">https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/users.png</a>
-<img src="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/checkpoints.png" width="100%">
+<a href="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/checkpoints.png">
+<img src="https://github.com/isil-pe/AM2-20162-Proyecto-Seguimiento_de_camiones/blob/master/checkpoints.png" width="100%"></a>
 
 
 <h3>Usuario de Prueba</h3>
