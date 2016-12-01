@@ -1,6 +1,7 @@
 package como.isil.mynotes.rest.storage.request;
 
 import como.isil.mynotes.rest.storage.entity.CheckPointRaw;
+import como.isil.mynotes.rest.storage.entity.CheckPointResponse;
 import como.isil.mynotes.rest.storage.entity.CheckPointsResponse;
 import como.isil.mynotes.rest.storage.entity.LogInProyRaw;
 import como.isil.mynotes.rest.storage.entity.LogInProyResponse;
@@ -97,7 +98,7 @@ public class ApiProy {
                 "application-type: REST"
         })
         @POST("/v1/data/checkpoints")
-        Call<CheckPointsResponse> addCheckPoint(@Body CheckPointRaw raw);
+        Call<CheckPointResponse> addCheckPoint(@Body CheckPointRaw raw);
     }
 
     /*private static OkHttpClient.Builder client(){

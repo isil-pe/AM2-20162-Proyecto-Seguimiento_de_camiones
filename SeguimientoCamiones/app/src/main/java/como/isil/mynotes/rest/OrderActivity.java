@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,10 +24,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.isil.mynotes.rest.R;
 
 import como.isil.mynotes.rest.entity.OrderEntity;
+import como.isil.mynotes.rest.presenter.AddCheckpointView;
+import como.isil.mynotes.rest.presenter.CheckPointPresenter;
 import como.isil.mynotes.rest.utils.LocationService;
 import como.isil.mynotes.rest.view.fragments.OrderDetailFragment;
 
-public class OrderActivity extends AppCompatActivity implements View.OnClickListener, OnMapReadyCallback{
+public class OrderActivity extends AppCompatActivity implements View.OnClickListener, OnMapReadyCallback,AddCheckpointView {
 
     public static final int DETAIL_ORDER = 101;
     private static final String TAG = "OrderActivity";
@@ -36,12 +39,13 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
     private View btnStart;
     private View btnStop;
-    private View rlayLoading;
+    private View rlayLoading,container;
 
     private GoogleMap googleMap;
     private LocationManager locMan;
     double lat, lng;
     private CustomMapFragment mCustomMapFragment;
+    private CheckPointPresenter checkPointPresenter;
 
     String origen_latitud, origen_longitud, destino_latitud, destino_longitud, id_orden;
 
@@ -54,7 +58,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
-
+        checkPointPresenter= new CheckPointPresenter();
 
         origen_latitud = getIntent().getStringExtra("origen_latitud");
         origen_longitud = getIntent().getStringExtra("origen_longitud");
@@ -70,6 +74,8 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
         btnStart.setOnClickListener(this);
         btnStop.setOnClickListener(this);
+
+        checkPointPresenter.attachedView(this);
 
 
     }
@@ -234,6 +240,8 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
                         return;
                     }
 
+                    checkPointPresenter.addCheckpoint(lat+"",lng+"",id_orden);
+
 
                     Toast.makeText(getApplicationContext(), "Ubicación enviada", Toast.LENGTH_SHORT).show();
 
@@ -255,5 +263,32 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
             h.removeCallbacks(runnable);
         Toast.makeText(getApplicationContext(), "Envio de coordenadas detenido", Toast.LENGTH_SHORT).show();
 
+    }
+
+    @Override
+    public void showLoading() {
+        this.rlayLoading.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideLoading() {
+        this.rlayLoading.setVisibility(View.GONE);
+    }
+
+    @Override
+    public Context getContext() {
+        return this;
+    }
+
+    @Override
+    public void onMessageError(String message) {
+        Snackbar snackbar = Snackbar
+                .make(container,message, Snackbar.LENGTH_LONG);
+        snackbar.show();
+    }
+
+    @Override
+    public void onAddCheckPointSuccess() {
+        this.finish();
     }
 }
