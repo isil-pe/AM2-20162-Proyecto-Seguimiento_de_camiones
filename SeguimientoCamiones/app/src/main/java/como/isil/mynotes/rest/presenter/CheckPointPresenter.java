@@ -38,9 +38,9 @@ public class CheckPointPresenter {
         CheckPointRaw checkPointRaw= new CheckPointRaw();
         checkPointRaw.setLatitud(lat);
         checkPointRaw.setLongitud(lon);
-        checkPointRaw.setObjectId(order);
+        checkPointRaw.setId_order(order);
 
-        addCheckpointView.showLoading();
+        //addCheckpointView.showLoading();
         Call<CheckPointResponse> call = ApiProy.getMyApiClient().addCheckPoint(checkPointRaw);
         call.enqueue(new Callback<CheckPointResponse>(){
             @Override

@@ -125,11 +125,11 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         Location lastLoc = locMan.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
         final double lat = lastLoc.getLatitude();
         final double lng = lastLoc.getLongitude();
-
+/*
 
         googleMap.addMarker(new MarkerOptions()
                 .position(new LatLng(lat, lng))
-                .title("Actual"));
+                .title("Actual"));*/
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                 new LatLng(lat, lng),12));
@@ -267,12 +267,12 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void showLoading() {
-        this.rlayLoading.setVisibility(View.VISIBLE);
+        //this.rlayLoading.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideLoading() {
-        this.rlayLoading.setVisibility(View.GONE);
+        //this.rlayLoading.setVisibility(View.GONE);
     }
 
     @Override
@@ -282,13 +282,13 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onMessageError(String message) {
-        Snackbar snackbar = Snackbar
-                .make(container,message, Snackbar.LENGTH_LONG);
-        snackbar.show();
+        //Snackbar snackbar = Snackbar
+        //        .make(container,message, Snackbar.LENGTH_LONG);
+        //snackbar.show();
     }
 
     @Override
     public void onAddCheckPointSuccess() {
-        this.finish();
+        //this.finish();
     }
 }
