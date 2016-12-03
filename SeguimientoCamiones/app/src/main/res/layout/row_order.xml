@@ -44,6 +44,20 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="RUC Cliente: "
         android:id="@+id/tviRUC" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Estatus: "
+        android:id="@+id/tviStatust"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Estatus:: "
+        android:id="@+id/tviStatus" />
+
 
     <View
         android:layout_width="match_parent"

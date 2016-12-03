@@ -1,6 +1,7 @@
 package como.isil.mynotes.rest.view.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,6 +54,7 @@ public class OrderAdapter extends BaseAdapter {
             holder.tviIdOrder = (TextView)v.findViewById(R.id.tviIDorder);
             holder.tviRUC = (TextView)v.findViewById(R.id.tviRUC);
             holder.tviDescripcion = (TextView)v.findViewById(R.id.tviDescripcion);
+            holder.tviStatus = (TextView)v.findViewById(R.id.tviStatus);
             v.setTag(holder);
         }
         OrderEntity entry = lsOrderEntities.get(position);
@@ -61,6 +63,17 @@ public class OrderAdapter extends BaseAdapter {
             holder.tviIdOrder.setText(entry.getObjectId());
             holder.tviRUC.setText(entry.getClient_RUC());
             holder.tviDescripcion.setText(entry.getDetail());
+            int estado = entry.getStatus();
+
+            if (estado == 1){
+                holder.tviStatus.setText("Activo");
+                holder.tviStatus.setTextColor(Color.GREEN);
+
+            }else if(estado==2){
+                holder.tviStatus.setText("Finalizado");
+                holder.tviStatus.setTextColor(Color.RED);
+            }
+
         }
 
         return v;
@@ -68,6 +81,6 @@ public class OrderAdapter extends BaseAdapter {
 
     static class ViewHolder
     {
-        TextView tviIdOrder, tviRUC, tviDescripcion;
+        TextView tviIdOrder, tviRUC, tviDescripcion, tviStatus;
     }
 }

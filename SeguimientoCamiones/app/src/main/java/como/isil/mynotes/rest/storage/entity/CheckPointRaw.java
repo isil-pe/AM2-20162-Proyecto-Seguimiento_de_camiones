@@ -13,6 +13,7 @@ public class CheckPointRaw {
     private Date fecha;
     private String objectId;
 
+
     public String getLatitud() {
         return latitud;
     }

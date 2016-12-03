@@ -47,6 +47,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
     private CheckPointPresenter checkPointPresenter;
 
     String origen_latitud, origen_longitud, destino_latitud, destino_longitud, id_orden;
+    int status;
 
     Handler h = new Handler();
     int delay = 15000; //15 seconds
@@ -63,6 +64,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         origen_longitud = getIntent().getStringExtra("origen_longitud");
         destino_latitud = getIntent().getStringExtra("destino_latitud");
         destino_longitud = getIntent().getStringExtra("destino_longitud");
+        status = getIntent().getIntExtra("status",0);
         id_orden = getIntent().getStringExtra("id_orden");
         initializeUI();
 
@@ -116,7 +118,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         locMan = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
-            Toast.makeText(OrderActivity.this, "Por favor ceder permisos en configuración.", Toast.LENGTH_LONG).show();
+            Toast.makeText(OrderActivity.this, "Por favor conceder permisos en configuración.", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -203,7 +205,10 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnStart:
-                startLocationService();
+                if(status ==1){
+                startLocationService();}else if(status==2){
+                    Toast.makeText(OrderActivity.this, "El recorrido de esta orden fue finalizado por el administrador.", Toast.LENGTH_LONG).show();
+                }
                 break;
             case R.id.btnStop:
                 stopLocationService();
@@ -219,7 +224,6 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
                     locMan = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
                     if (ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
                         Toast.makeText(OrderActivity.this, "Por favor ceder permisos en configuración.", Toast.LENGTH_LONG).show();
                         return;
                     }
@@ -259,9 +263,12 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
     private void stopLocationService() {
 
+        if(status == 1) {
             h.removeCallbacks(runnable);
-        Toast.makeText(getApplicationContext(), "Envio de coordenadas detenido", Toast.LENGTH_SHORT).show();
-
+            Toast.makeText(getApplicationContext(), "Envio de coordenadas detenido", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(OrderActivity.this, "Acción inválida.", Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override

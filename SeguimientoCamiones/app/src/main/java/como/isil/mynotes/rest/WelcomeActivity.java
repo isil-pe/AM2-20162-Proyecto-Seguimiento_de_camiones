@@ -102,6 +102,7 @@ public class WelcomeActivity extends AppCompatActivity implements OrdersView{
                 Log.d("DESTINO Latitud: ", orderEntity.getDestino_lat());
                 Log.d("DESTINO Longitud: ", orderEntity.getDestino_lon());
                 Log.d("ID Orden: ", orderEntity.getObjectId());
+                Log.d("Estatus: ", String.valueOf(orderEntity.getStatus()));
 
                 Intent intent= new Intent(WelcomeActivity.this,OrderActivity.class);
                 intent.putExtra("origen_latitud", orderEntity.getOrigen_lat());
@@ -109,6 +110,7 @@ public class WelcomeActivity extends AppCompatActivity implements OrdersView{
                 intent.putExtra("destino_latitud", orderEntity.getDestino_lat());
                 intent.putExtra("destino_longitud", orderEntity.getDestino_lon());
                 intent.putExtra("id_orden", orderEntity.getObjectId());
+                intent.putExtra("status", orderEntity.getStatus());
                 startActivity(intent);
                 //gotoOrderDetails(orderEntity);
             }

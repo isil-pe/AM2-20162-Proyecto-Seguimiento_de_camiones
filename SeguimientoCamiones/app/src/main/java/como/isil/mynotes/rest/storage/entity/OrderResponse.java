@@ -15,6 +15,16 @@ public class OrderResponse {
     private String detail;
     private String created;
     private String __class;
+    private int status;
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
     private String objectId;
 
     public String getWeight() {

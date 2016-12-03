@@ -16,9 +16,17 @@ public class OrderEntity implements Serializable {
     private String origen_lon;
     private String destino_lat;
     private String destino_lon;
+    private int status;
 
+    public int getStatus() {
+        return status;
+    }
 
-    public OrderEntity(String detail, String id_vehiculo, String weight, String client_RUC, String origen_lat, String origen_lon, String destino_lat, String destino_lon) {
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public OrderEntity(String detail, String id_vehiculo, String weight, String client_RUC, String origen_lat, String origen_lon, String destino_lat, String destino_lon, int status) {
         this.detail = detail;
         this.id_vehiculo = id_vehiculo;
         this.weight = weight;
@@ -27,6 +35,7 @@ public class OrderEntity implements Serializable {
         this.origen_lon = origen_lon;
         this.destino_lat = destino_lat;
         this.destino_lon = destino_lon;
+        this.status = status;
     }
 
     public String getObjectId() {

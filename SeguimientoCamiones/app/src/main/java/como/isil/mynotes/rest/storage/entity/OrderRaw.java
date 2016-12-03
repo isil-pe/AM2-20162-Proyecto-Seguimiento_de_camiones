@@ -32,4 +32,5 @@ public class OrderRaw {
     private String id_order;
     private String latitud;
     private String longitud;
+    private int status;
 }
